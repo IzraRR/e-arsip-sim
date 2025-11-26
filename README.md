@@ -169,16 +169,16 @@
 Setelah menjalankan seeder, gunakan kredensial berikut:
 
 - **Admin:**
-  - Email: `admin@example.com`
-  - Password: `password`
+  - Email: `admin@earsip.com`
+  - Password: `admin123`
 
 - **Pimpinan:**
-  - Email: `pimpinan@example.com`
-  - Password: `password`
+  - Email: `ktu@earsip.com`
+  - Password: `keptu123`
 
 - **Staff:**
-  - Email: `staff@example.com`
-  - Password: `password`
+  - Email: `staff1@earsip.com`
+  - Password: `staff111`
 
 > ⚠️ **PENTING:** Ganti password default setelah login pertama kali!
 
