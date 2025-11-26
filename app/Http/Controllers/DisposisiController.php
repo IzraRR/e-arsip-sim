@@ -118,7 +118,7 @@ class DisposisiController extends Controller
         // Upload file lampiran jika ada
         if ($request->hasFile('file_lampiran')) {
             try {
-                $file = $request->file('file_lampiran');
+            $file = $request->file('file_lampiran');
                 
                 // Sanitize filename
                 $originalName = $file->getClientOriginalName();
@@ -126,8 +126,8 @@ class DisposisiController extends Controller
                 $cleanName = preg_replace('/[^A-Za-z0-9\-_\.]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
                 $filename = time() . '_' . $cleanName . '.' . $extension;
                 
-                $file->move(public_path('uploads/disposisi'), $filename);
-                $data['file_lampiran'] = $filename;
+            $file->move(public_path('uploads/disposisi'), $filename);
+            $data['file_lampiran'] = $filename;
                 
             } catch (\Exception $e) {
                 Log::error('File upload error: ' . $e->getMessage());
@@ -220,11 +220,11 @@ class DisposisiController extends Controller
         if ($request->hasFile('file_lampiran')) {
             try {
                 // Hapus file lama jika ada
-                if ($disposisi->file_lampiran && file_exists(public_path('uploads/disposisi/' . $disposisi->file_lampiran))) {
-                    unlink(public_path('uploads/disposisi/' . $disposisi->file_lampiran));
-                }
+            if ($disposisi->file_lampiran && file_exists(public_path('uploads/disposisi/' . $disposisi->file_lampiran))) {
+                unlink(public_path('uploads/disposisi/' . $disposisi->file_lampiran));
+            }
 
-                $file = $request->file('file_lampiran');
+            $file = $request->file('file_lampiran');
                 
                 // Sanitize filename
                 $originalName = $file->getClientOriginalName();
@@ -232,8 +232,8 @@ class DisposisiController extends Controller
                 $cleanName = preg_replace('/[^A-Za-z0-9\-_\.]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
                 $filename = time() . '_' . $cleanName . '.' . $extension;
                 
-                $file->move(public_path('uploads/disposisi'), $filename);
-                $data['file_lampiran'] = $filename;
+            $file->move(public_path('uploads/disposisi'), $filename);
+            $data['file_lampiran'] = $filename;
                 
             } catch (\Exception $e) {
                 Log::error('File upload error: ' . $e->getMessage());

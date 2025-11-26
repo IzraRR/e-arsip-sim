@@ -245,6 +245,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Developer Credit -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card border-0 bg-light">
+                <div class="card-body text-center py-3">
+                    <small class="text-muted">
+                        <i class="bi bi-code-slash"></i> 
+                        <strong>Developed by:</strong> 
+                        Izra Rafif Rabbani | Adniel Rama Ezaputra | Muhammad Rizky
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
 

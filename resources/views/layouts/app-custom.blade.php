@@ -224,6 +224,25 @@
 
             @yield('content')
         </div>
+
+        <!-- Footer -->
+        <footer class="bg-white border-top mt-5 py-3">
+            <div class="container-fluid px-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <small class="text-muted">
+                            &copy; {{ date('Y') }} E-Arsip System. All rights reserved.
+                        </small>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <small class="text-muted">
+                            <strong>Developed by:</strong> 
+                            Izra Rafif Rabbani, Adniel Rama Ezaputra, Muhammad Rizky
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- Bootstrap JS -->

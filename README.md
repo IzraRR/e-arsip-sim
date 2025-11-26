@@ -1,66 +1,337 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📁 E-Arsip - Sistem Manajemen Arsip Elektronik
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-10.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Sistem manajemen arsip elektronik berbasis web untuk mengelola surat masuk, surat keluar, disposisi, dan arsip dokumen secara digital.**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[Fitur](#-fitur) • [Instalasi](#-instalasi) • [Penggunaan](#-penggunaan) • [Teknologi](#-teknologi)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📋 Tentang E-Arsip
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**E-Arsip** adalah aplikasi web berbasis Laravel yang dirancang untuk membantu organisasi dalam mengelola arsip elektronik secara efisien dan terstruktur. Sistem ini menyediakan solusi lengkap untuk manajemen surat masuk, surat keluar, disposisi, dan arsip dokumen dengan fitur keamanan berbasis role (Admin, Pimpinan, Staff).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎯 Tujuan
 
-## Laravel Sponsors
+- ✅ Digitalisasi proses manajemen arsip
+- ✅ Meningkatkan efisiensi pengelolaan dokumen
+- ✅ Memudahkan tracking dan pencarian dokumen
+- ✅ Meningkatkan transparansi dan akuntabilitas
+- ✅ Mengurangi penggunaan kertas (paperless)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## ✨ Fitur
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 🔐 **Manajemen User & Keamanan**
+- Sistem autentikasi dengan role-based access control (RBAC)
+- 3 level akses: **Admin**, **Pimpinan**, dan **Staff**
+- Manajemen user lengkap dengan validasi
+- Log aktivitas untuk audit trail
+- Keamanan password dengan hashing
 
-## Contributing
+### 📨 **Surat Masuk**
+- Input dan kelola surat masuk
+- Auto-generate nomor agenda
+- Upload file surat (PDF, DOC, DOCX, JPG, PNG)
+- Filter berdasarkan status, tanggal, dan pencarian
+- Tracking status: Pending, Disposisi, Selesai
+- Prioritas: Biasa, Penting, Segera
+- Sifat: Biasa, Rahasia, Sangat Rahasia
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 📤 **Surat Keluar**
+- Buat dan kelola surat keluar
+- Workflow: Draft → Approved → Sent
+- Upload file surat
+- Filter dan pencarian
+- Tracking status pengiriman
 
-## Code of Conduct
+### 📋 **Disposisi**
+- Buat disposisi dari surat masuk
+- Assign ke user tertentu
+- Tracking status: Pending, Dibaca, Proses, Selesai
+- Upload file lampiran
+- Batas waktu penyelesaian
+- Notifikasi real-time
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🗄️ **Arsip Dokumen**
+- Kategorisasi dokumen
+- Upload dan kelola arsip
+- Sistem tagging untuk pencarian
+- Filter berdasarkan kategori dan tanggal
+- Download dokumen
 
-## Security Vulnerabilities
+### 📊 **Laporan & Statistik**
+- Dashboard statistik real-time
+- Export laporan ke **PDF** dan **Excel**
+- Laporan per periode (custom date range)
+- Statistik per kategori
+- Laporan lengkap (gabungan semua data)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 🔔 **Notifikasi**
+- Notifikasi real-time
+- Notifikasi untuk disposisi baru
+- Notifikasi untuk surat masuk/keluar
+- Badge counter notifikasi
+- Mark as read/unread
 
-## License
+### ⚙️ **Pengaturan Sistem**
+- Konfigurasi aplikasi
+- Pengaturan instansi
+- Pengaturan file upload
+- Pengaturan notifikasi
+- Retensi log
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 📝 **Log Aktivitas**
+- Pencatatan semua aktivitas user
+- Filter berdasarkan modul, user, dan tanggal
+- Detail log dengan IP address dan user agent
+- Hapus log lama otomatis
+
+---
+
+## 🚀 Instalasi
+
+### **Persyaratan Sistem**
+
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- Database (MySQL/MariaDB/PostgreSQL)
+- Web Server (Apache/Nginx)
+
+### **Langkah Instalasi**
+
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/yourusername/e-arsip.git
+   cd e-arsip
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
+
+3. **Setup Environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+4. **Konfigurasi Database**
+   
+   Edit file `.env` dan sesuaikan konfigurasi database:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=e_arsip
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+5. **Jalankan Migration & Seeder**
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+
+6. **Build Assets**
+   ```bash
+   npm run build
+   # atau untuk development:
+   npm run dev
+   ```
+
+7. **Setup Storage Link**
+   ```bash
+   php artisan storage:link
+   ```
+
+8. **Jalankan Server**
+   ```bash
+   php artisan serve
+   ```
+
+   Aplikasi akan berjalan di `http://localhost:8000`
+
+### **Default Login**
+
+Setelah menjalankan seeder, gunakan kredensial berikut:
+
+- **Admin:**
+  - Email: `admin@example.com`
+  - Password: `password`
+
+- **Pimpinan:**
+  - Email: `pimpinan@example.com`
+  - Password: `password`
+
+- **Staff:**
+  - Email: `staff@example.com`
+  - Password: `password`
+
+> ⚠️ **PENTING:** Ganti password default setelah login pertama kali!
+
+---
+
+## 📖 Penggunaan
+
+### **Untuk Admin**
+
+1. Login dengan akun admin
+2. Akses dashboard admin untuk melihat statistik
+3. Kelola user melalui menu **Manajemen User**
+4. Kelola kategori arsip
+5. Lihat log aktivitas sistem
+6. Konfigurasi pengaturan aplikasi
+
+### **Untuk Pimpinan**
+
+1. Login dengan akun pimpinan
+2. Lihat dashboard dengan statistik disposisi
+3. Buat disposisi untuk surat masuk
+4. Approve surat keluar
+5. Lihat laporan
+
+### **Untuk Staff**
+
+1. Login dengan akun staff
+2. Input surat masuk dan surat keluar
+3. Lihat disposisi yang ditugaskan
+4. Update status disposisi
+5. Kelola arsip dokumen
+
+---
+
+## 🛠️ Teknologi
+
+### **Backend**
+- **Laravel 10.x** - PHP Framework
+- **MySQL/MariaDB** - Database
+- **Laravel Sanctum** - API Authentication
+
+### **Frontend**
+- **Bootstrap 5.3** - CSS Framework
+- **Bootstrap Icons** - Icon Library
+- **Alpine.js** - JavaScript Framework
+- **Tailwind CSS** - Utility-first CSS
+- **Vite** - Build Tool
+
+### **Libraries**
+- **DomPDF** - PDF Generation
+- **Maatwebsite Excel** - Excel Export
+- **Carbon** - Date/Time Handling
+
+---
+
+## 📁 Struktur Proyek
+
+```
+e-arsip/
+├── app/
+│   ├── Http/Controllers/    # Controller aplikasi
+│   ├── Models/              # Model Eloquent
+│   ├── Exports/             # Excel Export Classes
+│   └── View/Components/     # Blade Components
+├── database/
+│   ├── migrations/          # Database migrations
+│   └── seeders/             # Database seeders
+├── resources/
+│   ├── views/               # Blade templates
+│   ├── css/                 # Stylesheet
+│   └── js/                  # JavaScript
+├── routes/
+│   ├── web.php              # Web routes
+│   └── api.php              # API routes
+└── public/
+    └── uploads/             # File uploads
+```
+
+---
+
+## 🔒 Keamanan
+
+- ✅ Password hashing dengan bcrypt
+- ✅ CSRF protection
+- ✅ SQL injection prevention (Eloquent ORM)
+- ✅ XSS protection
+- ✅ File upload validation
+- ✅ Role-based access control
+- ✅ Session management
+- ✅ Rate limiting pada login
+
+---
+
+## 📊 Database
+
+Sistem menggunakan 8 tabel utama:
+
+1. **users** - Data pengguna
+2. **surat_masuk** - Surat masuk
+3. **surat_keluar** - Surat keluar
+4. **disposisi** - Disposisi surat
+5. **arsip** - Arsip dokumen
+6. **kategori** - Kategori arsip
+7. **notifikasi** - Notifikasi sistem
+8. **log_aktivitas** - Log aktivitas user
+9. **pengaturan** - Pengaturan sistem
+
+---
+
+## 🧪 Testing
+
+```bash
+# Run tests
+php artisan test
+
+# Run dengan coverage
+php artisan test --coverage
+```
+
+---
+
+## 📝 Lisensi
+
+Proyek ini menggunakan lisensi **MIT License**.
+
+---
+
+## 👥 Developer
+
+Dikembangkan oleh:
+
+- **Izra Rafif Rabbani**
+- **Adniel Rama Ezaputra**
+- **Muhammad Rizky**
+
+---
+
+## 📞 Kontak & Support
+
+Untuk pertanyaan, bug report, atau feature request, silakan buat issue di repository ini.
+
+---
+
+## 🙏 Terima Kasih
+
+Terima kasih telah menggunakan **E-Arsip**! Semoga sistem ini dapat membantu meningkatkan efisiensi manajemen arsip di organisasi Anda.
+
+---
+
+<div align="center">
+
+**Made with ❤️ using Laravel**
+
+⭐ Star repository ini jika proyek ini membantu Anda!
+
+</div>

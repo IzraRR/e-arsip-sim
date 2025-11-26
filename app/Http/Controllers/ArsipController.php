@@ -87,7 +87,7 @@ class ArsipController extends Controller
         // Upload file
         if ($request->hasFile('file_dokumen')) {
             try {
-                $file = $request->file('file_dokumen');
+            $file = $request->file('file_dokumen');
                 
                 // Sanitize filename
                 $originalName = $file->getClientOriginalName();
@@ -95,8 +95,8 @@ class ArsipController extends Controller
                 $cleanName = preg_replace('/[^A-Za-z0-9\-_\.]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
                 $filename = time() . '_' . $cleanName . '.' . $extension;
                 
-                $file->move(public_path('uploads/arsip'), $filename);
-                $data['file_dokumen'] = $filename;
+            $file->move(public_path('uploads/arsip'), $filename);
+            $data['file_dokumen'] = $filename;
                 
             } catch (\Exception $e) {
                 Log::error('File upload error: ' . $e->getMessage());
@@ -163,11 +163,11 @@ class ArsipController extends Controller
         if ($request->hasFile('file_dokumen')) {
             try {
                 // Hapus file lama jika ada
-                if ($arsip->file_dokumen && file_exists(public_path('uploads/arsip/' . $arsip->file_dokumen))) {
-                    unlink(public_path('uploads/arsip/' . $arsip->file_dokumen));
-                }
+            if ($arsip->file_dokumen && file_exists(public_path('uploads/arsip/' . $arsip->file_dokumen))) {
+                unlink(public_path('uploads/arsip/' . $arsip->file_dokumen));
+            }
 
-                $file = $request->file('file_dokumen');
+            $file = $request->file('file_dokumen');
                 
                 // Sanitize filename
                 $originalName = $file->getClientOriginalName();
@@ -175,8 +175,8 @@ class ArsipController extends Controller
                 $cleanName = preg_replace('/[^A-Za-z0-9\-_\.]/', '_', pathinfo($originalName, PATHINFO_FILENAME));
                 $filename = time() . '_' . $cleanName . '.' . $extension;
                 
-                $file->move(public_path('uploads/arsip'), $filename);
-                $data['file_dokumen'] = $filename;
+            $file->move(public_path('uploads/arsip'), $filename);
+            $data['file_dokumen'] = $filename;
                 
             } catch (\Exception $e) {
                 Log::error('File upload error: ' . $e->getMessage());
